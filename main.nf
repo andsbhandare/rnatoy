@@ -50,7 +50,7 @@ log.info """\
  * the pair ID, the first read-pair file and the second read-pair file 
  */
 Channel
-    .fromFilePairs( params.reads )
+    .fromFilePairs( params.reads, checkIfExists: true )
     .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
     .set { read_pairs_ch } 
  
