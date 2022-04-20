@@ -35,9 +35,9 @@
   params.genome = "$baseDir/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa"
 */
 
-params.reads = "s3://Rnatoy/data/ggal/*_{1,2}.fq"
-params.annot = "s3://Rnatoy/data/ggal/ggal_1_48850000_49020000.bed.gff"
-params.genome = "s3://Rnatoy/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa"
+params.reads = "s3://dasl-dev/data/ggal/*_{1,2}.fq"
+params.annot = "s3://dasl-dev/data/ggal/ggal_1_48850000_49020000.bed.gff"
+params.genome = "s3://dasl-dev/data/ggal/ggal_1_48850000_49020000.Ggal71.500bpflank.fa"
 params.outdir = 'results'
 
 log.info """\
