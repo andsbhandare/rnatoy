@@ -63,6 +63,7 @@ Channel
  * Step 1. Builds the genome index required by the mapping process
  */
 process buildIndex {
+    pod imagePullSecret: "name: regcred"
     tag "$genome.baseName"
     
     input:
@@ -80,6 +81,8 @@ process buildIndex {
  * Step 2. Maps each read-pair by using Tophat2 mapper tool
  */
 process mapping {
+    pod imagePullSecret: "name: regcred"
+    
     tag "$pair_id"
      
     input:
@@ -101,6 +104,8 @@ process mapping {
  * Step 3. Assembles the transcript by using the "cufflinks" tool
  */
 process makeTranscript {
+    pod imagePullSecret: "name: regcred"
+    
     tag "$pair_id"
     publishDir params.outdir, mode: 'copy'  
        
